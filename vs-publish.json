@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json.schemastore.org/vsix-publish",
+    "categories": [
+        "theme"
+    ],
+    "identity": {
+        "internalName": "gruber-darker-vs"
+    },
+    "overview": "overview.md",
+    "priceCategory": "free",
+    "publisher": "alsi-lawr-gh",
+    "private": false,
+    "qna": true,
+    "repo": "https://github.com/alsi-lawr/gruber-darker-vs"
+}

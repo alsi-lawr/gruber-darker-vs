@@ -1,5 +1,5 @@
 <Themes>
-  <Theme Name="gruber-darker-theme" GUID="{ce2c3040-574d-486e-bd24-2f98fb725702}" BaseGUID="{1ded0138-47ce-435e-84ef-9ec1f439b749}">
+  <Theme Name="Gruber Darker" GUID="{ce2c3040-574d-486e-bd24-2f98fb725702}" BaseGUID="{1ded0138-47ce-435e-84ef-9ec1f439b749}">
     <Category Name="Autos" GUID="{a7ee6bee-d0aa-4b2f-ad9d-748276a725f6}">
       <Color Name="ChangedText">
         <Background Type="CT_INVALID" Source="00000000" />
@@ -268,7 +268,7 @@
         <Background Type="CT_RAW" Source="FF282828" />
       </Color>
       <Color Name="PropertyValueLocal">
-        <Background Type="CT_RAW" Source="FFF4F4FF" />
+        <Background Type="CT_RAW" Source="FF73C936" />
       </Color>
       <Color Name="MenuSeparator">
         <Background Type="CT_RAW" Source="FF282828" />
@@ -5046,19 +5046,19 @@
       </Color>
       <Color Name="XAML Attribute Quotes">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF73C936" />
       </Color>
       <Color Name="XAML Attribute Value">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF73C936" />
       </Color>
       <Color Name="XAML Attribute">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF95A99F" />
       </Color>
       <Color Name="XAML CData Section">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFE4E4EF" />
+        <Foreground Type="CT_RAW" Source="FF73C936" />
       </Color>
       <Color Name="XAML Comment">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
@@ -5066,7 +5066,7 @@
       </Color>
       <Color Name="XAML Delimiter">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FF96A6C8" />
       </Color>
       <Color Name="XAML Keyword">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
@@ -5074,7 +5074,7 @@
       </Color>
       <Color Name="XAML Markup Extension Class">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF95A99F" />
+        <Foreground Type="CT_RAW" Source="FFFFDD33" />
       </Color>
       <Color Name="XAML Markup Extension Parameter Name">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
@@ -5086,7 +5086,7 @@
       </Color>
       <Color Name="XAML Name">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FFFFDD33" />
       </Color>
       <Color Name="XAML Processing Instruction">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
@@ -5098,19 +5098,19 @@
       </Color>
       <Color Name="XML Attribute Quotes">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF73C936" />
       </Color>
       <Color Name="XML Attribute Value">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF73C936" />
       </Color>
       <Color Name="XML Attribute">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF95A99F" />
       </Color>
       <Color Name="XML CData Section">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFE4E4EF" />
+        <Foreground Type="CT_RAW" Source="FF73C936" />
       </Color>
       <Color Name="XML Comment">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
@@ -5118,7 +5118,7 @@
       </Color>
       <Color Name="XML Delimiter">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FF96A6C8" />
       </Color>
       <Color Name="XML Doc Attribute">
         <Background Type="CT_INVALID" Source="00000000" />
@@ -5126,11 +5126,11 @@
       </Color>
       <Color Name="XML Doc Comment">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF95A99F" />
+        <Foreground Type="CT_RAW" Source="FFCC8C3C" />
       </Color>
       <Color Name="XML Doc Tag">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF95A99F" />
+        <Foreground Type="CT_RAW" Source="FFFFDD33" />
       </Color>
       <Color Name="XML Keyword">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
@@ -5138,7 +5138,7 @@
       </Color>
       <Color Name="XML Name">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF96A6C8" />
+        <Foreground Type="CT_RAW" Source="FFFFDD33" />
       </Color>
       <Color Name="XML Processing Instruction">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
@@ -5170,7 +5170,7 @@
       </Color>
       <Color Name="SQL Operator">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FF96A6C8" />
       </Color>
       <Color Name="SQL String">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
@@ -5324,7 +5324,7 @@
       </Color>
       <Color Name="CSS Property Value">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF73C936" />
       </Color>
       <Color Name="CSS Selector">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
@@ -5376,11 +5376,11 @@
       </Color>
       <Color Name="HTML Attribute Value">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF95A99F" />
       </Color>
       <Color Name="HTML Attribute">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF95A99F" />
       </Color>
       <Color Name="HTML Comment">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
@@ -5396,7 +5396,7 @@
       </Color>
       <Color Name="HTML Operator">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FF96A6C8" />
       </Color>
       <Color Name="HTML Server-Side Script">
         <Background Type="CT_RAW" Source="FF181818" />
@@ -5404,7 +5404,7 @@
       </Color>
       <Color Name="HTML Tag Delimiter">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FF96A6C8" />
       </Color>
       <Color Name="InstructionLineClassificationFormat">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
@@ -5564,7 +5564,7 @@
       </Color>
       <Color Name="VBScript Operator">
         <Background Type="CT_COLORINDEX" Source="00000001" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FF96A6C8" />
       </Color>
       <Color Name="VBScript String">
         <Background Type="CT_COLORINDEX" Source="00000001" />
@@ -5576,19 +5576,19 @@
       </Color>
       <Color Name="XmlAttributeNameClassificationFormat">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF95A99F" />
       </Color>
       <Color Name="XmlAttributeQuotesClassificationFormat">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF73C936" />
       </Color>
       <Color Name="XmlAttributeValueClassificationFormat">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF73C936" />
       </Color>
       <Color Name="XmlCDataSectionClassificationFormat">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFE4E4EF" />
+        <Foreground Type="CT_RAW" Source="FF73C936" />
       </Color>
       <Color Name="XmlCommentClassificationFormat">
         <Background Type="CT_INVALID" Source="00000000" />
@@ -5596,7 +5596,7 @@
       </Color>
       <Color Name="XmlDelimiterClassificationFormat">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FF96A6C8" />
       </Color>
       <Color Name="XmlDocAttributeClassificationFormat">
         <Background Type="CT_INVALID" Source="00000000" />
@@ -5604,11 +5604,11 @@
       </Color>
       <Color Name="XmlDocCommentClassificationFormat">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF95A99F" />
+        <Foreground Type="CT_RAW" Source="FFCC8C3C" />
       </Color>
       <Color Name="XmlDocTagClassificationFormat">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF95A99F" />
+        <Foreground Type="CT_RAW" Source="FFFFDD33" />
       </Color>
       <Color Name="XmlEmbeddedExpressionClassificationFormat">
         <Background Type="CT_INVALID" Source="00000000" />
@@ -5616,7 +5616,7 @@
       </Color>
       <Color Name="XmlNameClassificationFormat">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF96A6C8" />
+        <Foreground Type="CT_RAW" Source="FFFFDD33" />
       </Color>
       <Color Name="XmlProcessingInstructionClassificationFormat">
         <Background Type="CT_INVALID" Source="00000000" />
@@ -5628,19 +5628,19 @@
       </Color>
       <Color Name="axml - attribute name">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF95A99F" />
       </Color>
       <Color Name="axml - attribute quotes">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF73C936" />
       </Color>
       <Color Name="axml - attribute value">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF73C936" />
       </Color>
       <Color Name="axml - cdata section">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF95A99F" />
+        <Foreground Type="CT_RAW" Source="FF73C936" />
       </Color>
       <Color Name="axml - comment">
         <Background Type="CT_INVALID" Source="00000000" />
@@ -5648,7 +5648,7 @@
       </Color>
       <Color Name="axml - delimiter">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FF96A6C8" />
       </Color>
       <Color Name="axml - entity reference">
         <Background Type="CT_INVALID" Source="00000000" />
@@ -5656,7 +5656,7 @@
       </Color>
       <Color Name="axml - name">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FFFFDD33" />
       </Color>
       <Color Name="axml - processing instruction">
         <Background Type="CT_INVALID" Source="00000000" />
@@ -5692,11 +5692,11 @@
       </Color>
       <Color Name="CppOperatorSemanticTokenFormat">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FF96A6C8" />
       </Color>
       <Color Name="CppMemberOperatorSemanticTokenFormat">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FF96A6C8" />
       </Color>
       <Color Name="CppNewDeleteSemanticTokenFormat">
         <Background Type="CT_INVALID" Source="00000000" />
@@ -5732,7 +5732,7 @@
       </Color>
       <Color Name="punctuation">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FFE4E4EF" />
       </Color>
       <Color Name="string - verbatim">
         <Background Type="CT_INVALID" Source="00000000" />
@@ -5744,7 +5744,7 @@
       </Color>
       <Color Name="operator - overloaded">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FF96A6C8" />
       </Color>
       <Color Name="class name">
         <Background Type="CT_INVALID" Source="00000000" />
@@ -5960,19 +5960,19 @@
       </Color>
       <Color Name="brace pair level one">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FFE4E4EF" />
       </Color>
       <Color Name="brace pair level two">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FFE4E4EF" />
       </Color>
       <Color Name="brace pair level three">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FFE4E4EF" />
       </Color>
       <Color Name="mismatched brace">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FFE4E4EF" />
       </Color>
       <Color Name="OverviewMarginScrollButtons">
         <Background Type="CT_RAW" Source="FF453D41" />
@@ -5992,15 +5992,15 @@
       </Color>
       <Color Name="Markup Attribute">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF95A99F" />
       </Color>
       <Color Name="Markup Attribute Value">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF73C936" />
       </Color>
       <Color Name="Markup Node">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF96A6C8" />
+        <Foreground Type="CT_RAW" Source="FFFFDD33" />
       </Color>
       <Color Name="Type">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
@@ -6016,7 +6016,7 @@
       </Color>
       <Color Name="Operator">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FF96A6C8" />
       </Color>
       <Color Name="BidirectionalTextControlCharacter">
         <Background Type="CT_RAW" Source="FF282828" />
@@ -6072,7 +6072,7 @@
       </Color>
       <Color Name="HTML Attribute Name">
         <Background Type="CT_AUTOMATIC" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FFF4F4FF" />
+        <Foreground Type="CT_RAW" Source="FF95A99F" />
       </Color>
       <Color Name="OverviewMarginCollapsedRegion">
         <Background Type="CT_RAW" Source="FF453D41" />
@@ -6880,10 +6880,10 @@
       </Color>
       <Color Name="Brace Matching (Highlight)">
         <Background Type="CT_INVALID" Source="00000000" />
-        <Foreground Type="CT_RAW" Source="FF9E95C7" />
+        <Foreground Type="CT_RAW" Source="FFE4E4EF" />
       </Color>
       <Color Name="Brace Matching (Rectangle)">
-        <Background Type="CT_RAW" Source="FF9E95C7" />
+        <Background Type="CT_RAW" Source="FFE4E4EF" />
         <Foreground Type="CT_INVALID" Source="00000000" />
       </Color>
       <Color Name="Breakpoint - Advanced (Disabled)">

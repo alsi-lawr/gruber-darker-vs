@@ -2,8 +2,8 @@
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <VSSDKBuildToolsAutoSetup>true</VSSDKBuildToolsAutoSetup>
-    <RootNamespace>gruber_darker_theme</RootNamespace>
-    <AssemblyName>gruber_darker_theme</AssemblyName>
+    <RootNamespace>gruber-darker-vs</RootNamespace>
+    <AssemblyName>gruber-darker-vs</AssemblyName>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
     <UseCodebase>true</UseCodebase>
     <IncludeAssemblyInVSIXContainer>true</IncludeAssemblyInVSIXContainer>

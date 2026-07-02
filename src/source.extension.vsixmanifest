@@ -6,12 +6,12 @@
 >
   <Metadata>
     <Identity
-      Id="gruber_darker_theme.e1e706e2-05d3-4da9-8754-652cd8ab65f4"
+      Id="gruber-darker-vs.e1e706e2-05d3-4da9-8754-652cd8ab65f4"
       Version="0.1"
       Language="en-US"
-      Publisher="alsi-lawr"
+      Publisher="alsi-lawr-gh"
     />
-    <DisplayName>gruber_darker_theme</DisplayName>
+    <DisplayName>Gruber Darker</DisplayName>
     <Description xml:space="preserve"
       >A native Visual Studio dark theme inspired by Gruber Darker, with muted UI chrome and a warm, readable syntax palette.
 </Description>
@@ -45,4 +45,3 @@
     />
   </Assets>
 </PackageManifest>
-

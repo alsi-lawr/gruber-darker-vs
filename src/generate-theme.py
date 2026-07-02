@@ -35,7 +35,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 TOKENS_PATH = os.path.join(HERE, "vstheme-tokens.json")
 OUTPUT_PATH = os.path.join(HERE, "generated.vstheme")
 
-THEME_NAME = "gruber-darker-theme"
+THEME_NAME = "Gruber Darker"
 THEME_GUID = "{ce2c3040-574d-486e-bd24-2f98fb725702}"
 # Visual Studio Dark base theme. Safe to remove if you do not want a base theme.
 BASE_GUID = "{1ded0138-47ce-435e-84ef-9ec1f439b749}"
@@ -149,6 +149,69 @@ EXACT: dict[tuple[str | None, str], tuple[str | None, str | None]] = {
     ("Environment", "CommandBarMenuWatermarkText"): ("quartz", None),
 }
 
+SLOT_EXACT: dict[tuple[str, str, str], str] = {
+    # XAML / XML core markup.
+    ("Text Editor Language Service Items", "XAML Name", "Foreground"): "yellow",
+    ("Text Editor Language Service Items", "XAML Keyword", "Foreground"): "yellow",
+    ("Text Editor Language Service Items", "XAML Delimiter", "Foreground"): "niagara",
+    ("Text Editor Language Service Items", "XAML Attribute", "Foreground"): "quartz",
+    ("Text Editor Language Service Items", "XAML Attribute Quotes", "Foreground"): "green",
+    ("Text Editor Language Service Items", "XAML Attribute Value", "Foreground"): "green",
+    ("Text Editor Language Service Items", "XAML Text", "Foreground"): "fg",
+    ("Text Editor Language Service Items", "XAML Comment", "Foreground"): "brown",
+    ("Text Editor Language Service Items", "XAML CData Section", "Foreground"): "green",
+    ("Text Editor Language Service Items", "XAML Processing Instruction", "Foreground"): "quartz",
+
+    # XAML markup extensions: {Binding Left.Name, UpdateSourceTrigger=PropertyChanged}
+    ("Text Editor Language Service Items", "XAML Markup Extension Class", "Foreground"): "yellow",
+    ("Text Editor Language Service Items", "XAML Markup Extension Parameter Name", "Foreground"): "fg+1",
+    ("Text Editor Language Service Items", "XAML Markup Extension Parameter Value", "Foreground"): "fg+1",
+
+    # XML equivalents.
+    ("Text Editor Language Service Items", "XML Name", "Foreground"): "yellow",
+    ("Text Editor Language Service Items", "XML Keyword", "Foreground"): "yellow",
+    ("Text Editor Language Service Items", "XML Delimiter", "Foreground"): "niagara",
+    ("Text Editor Language Service Items", "XML Attribute", "Foreground"): "quartz",
+    ("Text Editor Language Service Items", "XML Attribute Quotes", "Foreground"): "green",
+    ("Text Editor Language Service Items", "XML Attribute Value", "Foreground"): "green",
+    ("Text Editor Language Service Items", "XML Text", "Foreground"): "fg",
+    ("Text Editor Language Service Items", "XML Comment", "Foreground"): "brown",
+    ("Text Editor Language Service Items", "XML CData Section", "Foreground"): "green",
+    ("Text Editor Language Service Items", "XML Processing Instruction", "Foreground"): "quartz",
+    ("Text Editor Language Service Items", "XML Doc Attribute", "Foreground"): "quartz",
+    ("Text Editor Language Service Items", "XML Doc Tag", "Foreground"): "yellow",
+    ("Text Editor Language Service Items", "XML Doc Comment", "Foreground"): "brown",
+
+    # MEF / editor classification fallbacks.
+    ("Text Editor MEF Items", "XmlNameClassificationFormat", "Foreground"): "yellow",
+    ("Text Editor MEF Items", "XmlDelimiterClassificationFormat", "Foreground"): "niagara",
+    ("Text Editor MEF Items", "XmlAttributeNameClassificationFormat", "Foreground"): "quartz",
+    ("Text Editor MEF Items", "XmlAttributeQuotesClassificationFormat", "Foreground"): "green",
+    ("Text Editor MEF Items", "XmlAttributeValueClassificationFormat", "Foreground"): "green",
+    ("Text Editor MEF Items", "XmlTextClassificationFormat", "Foreground"): "fg",
+    ("Text Editor MEF Items", "XmlCommentClassificationFormat", "Foreground"): "brown",
+    ("Text Editor MEF Items", "XmlCDataSectionClassificationFormat", "Foreground"): "green",
+    ("Text Editor MEF Items", "XmlProcessingInstructionClassificationFormat", "Foreground"): "quartz",
+    ("Text Editor MEF Items", "XmlDocAttributeClassificationFormat", "Foreground"): "quartz",
+    ("Text Editor MEF Items", "XmlDocTagClassificationFormat", "Foreground"): "yellow",
+    ("Text Editor MEF Items", "XmlDocCommentClassificationFormat", "Foreground"): "brown",
+
+    ("Text Editor MEF Items", "Markup Node", "Foreground"): "yellow",
+    ("Text Editor MEF Items", "Markup Attribute", "Foreground"): "quartz",
+    ("Text Editor MEF Items", "Markup Attribute Value", "Foreground"): "green",
+
+    ("Text Editor MEF Items", "axml - name", "Foreground"): "yellow",
+    ("Text Editor MEF Items", "axml - delimiter", "Foreground"): "niagara",
+    ("Text Editor MEF Items", "axml - attribute name", "Foreground"): "quartz",
+    ("Text Editor MEF Items", "axml - attribute quotes", "Foreground"): "green",
+    ("Text Editor MEF Items", "axml - attribute value", "Foreground"): "green",
+    ("Text Editor MEF Items", "axml - text", "Foreground"): "fg",
+    ("Text Editor MEF Items", "axml - comment", "Foreground"): "brown",
+    ("Text Editor MEF Items", "axml - cdata section", "Foreground"): "green",
+    ("Text Editor MEF Items", "axml - processing instruction", "Foreground"): "quartz",
+    ("Text Editor MEF Items", "axml - entity reference", "Foreground"): "niagara",
+}
+
 # Name-only fallbacks for small debugger panes and repeated names.
 NAME_EXACT: dict[str, tuple[str | None, str | None]] = {
     "Plain Text": ("fg", "bg"),
@@ -231,12 +294,103 @@ FOREGROUND_PATTERNS: list[tuple[str, str]] = [
     (r"\b(namespace|tag helper|element name|xml name|html element|markup node|selector|entity|url|link|hyperlink)\b", "niagara"),
     (r"\blabel\b", "niagara"),
 
+    # XAML / XML / markup
+    # Goal:
+    #   <TextBlock Text="Hello" />
+    #    ^ yellow   ^ quartz ^ green
+    #
+    #   Text="{Binding Left.Name, UpdateSourceTrigger=PropertyChanged}"
+    #         ^ green quote
+    #          ^ blue {
+    #           ^ yellow Binding
+    #                   ^ white Left.Name
+    #                            ^ blue ,
+    #                              ^ white UpdateSourceTrigger
+    #                                                 ^ blue =
+    #                                                  ^ quartz PropertyChanged
+    #                                                                 ^ blue }
+    #                                                                  ^ green quote
+
+    # Tag / element names.
+    (r"\b(xaml|xml|axml)\s+(name|keyword)\b", "yellow"),
+    (r"\b(xmlnameclassificationformat|xml name classification format)\b", "yellow"),
+    (r"\b(xml literal|xml doc comment|axml)\s*-\s*name\b", "yellow"),
+    (r"\b(html element name|markup node|razor component element|razor tag helper element)\b", "yellow"),
+
+    # Tag / markup delimiters: < > / =
+    (r"\b(xaml|xml|axml)\s+delimiter\b", "niagara"),
+    (r"\b(xmldelimiterclassificationformat|xml delimiter classification format)\b", "niagara"),
+    (r"\b(xml literal|xml doc comment|axml)\s*-\s*delimiter\b", "niagara"),
+    (r"\b(html tag delimiter|html operator)\b", "niagara"),
+
+    # Attribute names.
+    (r"\b(xaml|xml|axml)\s+attribute\b", "quartz"),
+    (r"\b(xmlattributenameclassificationformat|xml attribute name classification format)\b", "quartz"),
+    (r"\b(xml doc attribute|xml doc attribute classification format|xmldocattributeclassificationformat)\b", "quartz"),
+    (r"\b(xml literal|xml doc comment|axml)\s*-\s*attribute name\b", "quartz"),
+    (r"\b(html attribute|html attribute name|markup attribute|razor component attribute|razor tag helper attribute|razor directive attribute)\b", "quartz"),
+
+    # Normal quoted attribute values.
+    (r"\b(xaml|xml|axml)\s+attribute quotes\b", "green"),
+    (r"\b(xaml|xml|axml)\s+attribute value\b", "green"),
+    (r"\b(xmlattributequotesclassificationformat|xml attribute quotes classification format)\b", "green"),
+    (r"\b(xmlattributevalueclassificationformat|xml attribute value classification format)\b", "green"),
+    (r"\b(xml literal|xml doc comment|axml)\s*-\s*attribute quotes\b", "green"),
+    (r"\b(xml literal|xml doc comment|axml)\s*-\s*attribute value\b", "green"),
+    (r"\b(html attribute value|markup attribute value)\b", "green"),
+
+    # XAML markup extensions, e.g. {Binding Left.Name, UpdateSourceTrigger=PropertyChanged}
+    (r"\bxaml markup extension class\b", "yellow"),
+    (r"\bxaml markup extension parameter name\b", "fg+1"),
+    (r"\bxaml markup extension parameter value\b", "quartz"),
+
+    # If VS exposes binding/path-like things under other names, keep them white.
+    (r"\b(binding path|markup extension path|path expression|property path|attached property)\b", "fg+1"),
+    (r"\b(markup extension name|markup extension identifier|binding identifier)\b", "fg+1"),
+
+    # Markup extension punctuation: { } , = .
+    (r"\b(markup extension delimiter|markup extension punctuation|binding delimiter|binding punctuation)\b", "niagara"),
+
+    # Comments / CDATA / processing instructions.
+    (r"\b(xaml|xml|axml)\s+comment\b", "brown"),
+    (r"\b(xmlcommentclassificationformat|xml comment classification format)\b", "brown"),
+    (r"\b(xml doc comment|xmldoccommentclassificationformat|xml doc comment classification format)\b", "brown"),
+    (r"\b(xml literal|xml doc comment|axml)\s*-\s*comment\b", "brown"),
+
+    (r"\b(xaml|xml|axml)\s+cdata section\b", "green"),
+    (r"\b(xmlcdatasectionclassificationformat|xml cdata section classification format)\b", "green"),
+    (r"\b(xml literal|xml doc comment|axml)\s*-\s*cdata section\b", "green"),
+
+    (r"\b(xaml|xml|axml)\s+processing instruction\b", "quartz"),
+    (r"\b(xmlprocessinginstructionclassificationformat|xml processing instruction classification format)\b", "quartz"),
+    (r"\b(xml literal|xml doc comment|axml)\s*-\s*processing instruction\b", "quartz"),
+
+    # Text/entity content.
+    (r"\b(html entity|entity reference|xml literal\s*-\s*entity reference|xml doc comment\s*-\s*entity reference|axml\s*-\s*entity reference)\b", "niagara"),
+    (r"\b(xmltextclassificationformat|xml text classification format|xaml text|xml text|axml\s*-\s*text|xml literal\s*-\s*text|xml doc comment\s*-\s*text)\b", "fg"),
+    
     # Variables / values / punctuation.
-    (r"\b(attribute quotes|quotes)\b", "fg+1"),
-    (r"\b(attribute value|property value|parameter value)\b", "fg+1"),
+    # These must stay after the XML / XAML / markup-specific rules.
+
+    # Links / namespace-ish identifiers.
+    (r"\b(namespace|selector|entity|url|link|hyperlink)\b", "niagara"),
+
+    # Generic markup names. XAML/XML-specific names should already have matched above.
+    (r"\b(tag helper|element name|xml name|html element|markup node)\b", "yellow"),
+
+    # Attribute values / quotes.
+    (r"\b(attribute quotes|quotes)\b", "green"),
+    (r"\b(attribute value|property value|parameter value)\b", "green"),
+
+    # Ordinary values.
     (r"\b(value)\b", "fg+1"),
+
+    # Ordinary identifiers.
     (r"\b(attribute|property name|property|field|variable|parameter|local|identifier|name)\b", "fg+1"),
-    (r"\b(delimiter|punctuation|brace|bracket|operator|alternation|quantifier|anchor)\b", "wisteria"),
+
+    # Operators can stay accented; structural punctuation should be quiet.
+    (r"\b(operator|alternation|quantifier|anchor)\b", "niagara"),
+    (r"\b(delimiter|punctuation|brace|bracket)\b", "fg"),
 
     # Muted / disabled / adornment text.
     (r"\b(excluded|unnecessary|disabled|inactive|unavailable|dimmed|watermark|hint|placeholder)\b", "niagara-1"),
@@ -312,14 +466,12 @@ BACKGROUND_CONCEPT = re.compile(
     re.IGNORECASE,
 )
 
-
 def normalise(text: str) -> str:
     # Split separators and Camel/PascalCase Visual Studio token names so
     # CppFunctionSemanticTokenFormat can match "function", etc.
     text = re.sub(r"(?<=[a-z0-9])(?=[A-Z])", " ", text)
     text = re.sub(r"(?<=[A-Z])(?=[A-Z][a-z])", " ", text)
     return re.sub(r"[_.\-/]+", " ", text).lower()
-
 
 def pattern_role(
     patterns: list[tuple[str, str]],
@@ -334,10 +486,8 @@ def pattern_role(
             return role
     return None
 
-
 def exact_roles(category: str, name: str) -> tuple[str | None, str | None] | None:
     return EXACT.get((category, name)) or EXACT.get((None, name)) or NAME_EXACT.get(name)
-
 
 def foreground_role(category: str, name: str, source: str | None) -> str:
     exact = exact_roles(category, name)
@@ -357,7 +507,6 @@ def foreground_role(category: str, name: str, source: str | None) -> str:
 
     return source_colour_role(source, foreground=True)
 
-
 def background_role(category: str, name: str, source: str | None) -> str:
     exact = exact_roles(category, name)
     if exact and exact[1]:
@@ -375,7 +524,6 @@ def background_role(category: str, name: str, source: str | None) -> str:
         return direct
 
     return source_colour_role(source, foreground=False)
-
 
 def source_colour_role(source: str | None, foreground: bool) -> str:
     """Map an arbitrary VS/Dark-theme source colour to a gruber role."""
@@ -429,20 +577,16 @@ def source_colour_role(source: str | None, foreground: bool) -> str:
         return "bg+3"
     return "bg+4"
 
-
 def is_foreground_concept(category: str, name: str) -> bool:
     # Use the token name only. Including category makes every Text Editor token
     # look foreground-like and corrupts real background slots.
     return bool(FOREGROUND_CONCEPT.search(normalise(name)))
 
-
 def is_background_concept(category: str, name: str) -> bool:
     return bool(BACKGROUND_CONCEPT.search(normalise(f"{category} {name}")))
 
-
 def slot_is_valid(slot: dict[str, Any] | None) -> bool:
     return bool(slot and slot.get("valid") and slot.get("type") != "CT_INVALID")
-
 
 def should_treat_background_as_foreground(
     category: str,
@@ -463,7 +607,6 @@ def should_treat_background_as_foreground(
         return False
 
     return True
-
 
 def resolve_slot(
     category: str,
@@ -490,6 +633,10 @@ def resolve_slot(
     if alpha == "00":
         return SlotResult("CT_RAW", source)
 
+    exact_role = SLOT_EXACT.get((category, name, slot_name))
+    if exact_role:
+        return SlotResult("CT_RAW", preserve_alpha(source, exact_role))
+
     if slot_name == "Foreground":
         role = foreground_role(category, name, source)
         return SlotResult("CT_RAW", preserve_alpha(source, role))
@@ -501,12 +648,10 @@ def resolve_slot(
 
     return SlotResult("CT_RAW", preserve_alpha(source, role))
 
-
 def emit_slot(lines: list[str], slot_name: str, result: SlotResult | None) -> None:
     if result is None:
         return
     lines.append(f'        <{slot_name} Type="{result.type}" Source="{result.source}" />')
-
 
 def main() -> None:
     with open(TOKENS_PATH, encoding="utf-8") as f:
@@ -547,7 +692,6 @@ def main() -> None:
         f.write("\n".join(lines) + "\n")
 
     print(f"wrote {OUTPUT_PATH}: {len(categories)} categories, {total_colors} colors")
-
 
 if __name__ == "__main__":
     main()
