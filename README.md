@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/images/gruber-darker-vs-logo.png" alt="Gruber Darker for Visual Studio" width="128" />
+  <img src="src/Resources/icon.png" alt="Gruber Darker for Visual Studio" width="128" />
 
   # Gruber Darker for Visual Studio
 
@@ -14,11 +14,25 @@
 
 ## Screenshots
 
-<div align="center">
-  <img src="docs/images/csharp.png" alt="Gruber Darker applied to C# code in Visual Studio" width="80%" />
-  <br />
-  <img src="docs/images/xaml.png" alt="Gruber Darker applied to XAML markup in Visual Studio" width="80%" />
-</div>
+<table>
+  <tr>
+    <td align="center">
+      <img src="docs/images/csharp.png" alt="Gruber Darker applied to C# code in Visual Studio" width="720" />
+      <br />
+      <sub><b>C#</b> — syntax highlighting for classes, members, and comments in the editor</sub>
+    </td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="docs/images/xaml.png" alt="Gruber Darker applied to XAML markup in Visual Studio" width="720" />
+      <br />
+      <sub><b>XAML</b> — markup, attributes, and data bindings rendered with the theme</sub>
+    </td>
+  </tr>
+</table>
 
 ## About
 

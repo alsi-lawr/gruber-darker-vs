@@ -15,6 +15,8 @@
     <Description xml:space="preserve"
       >A native Visual Studio dark theme inspired by Gruber Darker, with muted UI chrome and a warm, readable syntax palette.
 </Description>
+    <Icon>Resources\icon.png</Icon>
+    <PreviewImage>Resources\icon.png</PreviewImage>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Community" Version="[17.0, 18.0)">
