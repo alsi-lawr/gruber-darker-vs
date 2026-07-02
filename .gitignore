@@ -484,3 +484,6 @@ $RECYCLE.BIN/
 # Claude
 .agent-workspace
 .claude
+
+# Generated Marketplace overview (see .github/scripts/Generate-MarketplaceOverview.ps1)
+/overview.md

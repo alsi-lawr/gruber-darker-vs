@@ -1,0 +1,100 @@
+name: Publish
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Validate tag and derive version
+        id: version
+        shell: pwsh
+        run: |
+          $tag = "${{ github.ref_name }}"
+          if ($tag -notmatch '^v(\d+\.\d+\.\d+)$') {
+            Write-Error "Tag '$tag' is not a valid vMAJOR.MINOR.PATCH tag."
+            exit 1
+          }
+          $version = $Matches[1]
+          Add-Content -Path $env:GITHUB_OUTPUT -Value "version=$version"
+
+      - name: Stamp version into vsixmanifest
+        shell: pwsh
+        run: |
+          $manifestPath = "src/source.extension.vsixmanifest"
+          [xml]$manifest = Get-Content $manifestPath
+          $ns = New-Object System.Xml.XmlNamespaceManager($manifest.NameTable)
+          $ns.AddNamespace("vs", "http://schemas.microsoft.com/developer/vsx-schema/2011")
+          $identity = $manifest.SelectSingleNode("//vs:Identity", $ns)
+          $identity.SetAttribute("Version", "${{ steps.version.outputs.version }}")
+          $manifest.Save($manifestPath)
+
+      - uses: microsoft/setup-msbuild@v3
+
+      - name: Build (Release)
+        run: msbuild /restore /p:Configuration=Release /p:DeployExtension=false gruber-darker-vs.slnx
+
+      - name: Generate Marketplace overview
+        shell: pwsh
+        run: |
+          ./.github/scripts/Generate-MarketplaceOverview.ps1 `
+            -Repo "${{ github.repository }}" `
+            -Ref "${{ github.ref_name }}"
+
+      - name: Stage publish payload
+        shell: pwsh
+        run: Copy-Item "src/bin/Release/net472/gruber-darker-vs.vsix" "gruber-darker-vs.vsix"
+
+      - uses: actions/upload-artifact@v7
+        with:
+          name: gruber-darker-vs-vsix
+          path: |
+            gruber-darker-vs.vsix
+            vs-publish.json
+            overview.md
+          if-no-files-found: error
+
+  publish:
+    needs: build
+    runs-on: windows-latest
+    environment:
+      name: marketplace
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: gruber-darker-vs-vsix
+
+      - name: Publish to Visual Studio Marketplace
+        shell: pwsh
+        run: |
+          $vsInstallPath = & "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe" -latest -prerelease -property installationPath
+          $vsixPublisher = Join-Path $vsInstallPath "VSSDK\VisualStudioIntegration\Tools\Bin\VsixPublisher.exe"
+          & $vsixPublisher publish `
+            -payload "gruber-darker-vs.vsix" `
+            -publishManifest "vs-publish.json" `
+            -personalAccessToken "${{ secrets.VS_MARKETPLACE_PAT }}"
+          if ($LASTEXITCODE -ne 0) {
+            Write-Error "VsixPublisher exited with code $LASTEXITCODE"
+            exit $LASTEXITCODE
+          }
+
+  release:
+    needs: publish
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: gruber-darker-vs-vsix
+
+      - uses: softprops/action-gh-release@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: gruber-darker-vs.vsix
+          generate_release_notes: true
