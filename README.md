@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="gruber-darker-vs-logo.svg" alt="Gruber Darker for Visual Studio" width="128" />
+  <img src="docs/images/gruber-darker-vs-logo.png" alt="Gruber Darker for Visual Studio" width="128" />
 
   # Gruber Darker for Visual Studio
 
@@ -9,11 +9,7 @@
   [![Build](https://github.com/alsi-lawr/gruber-darker-vs/actions/workflows/build.yml/badge.svg)](https://github.com/alsi-lawr/gruber-darker-vs/actions/workflows/build.yml)
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
   [![Visual Studio 2022](https://img.shields.io/badge/Visual%20Studio-2022-5C2D91?logo=visualstudio&logoColor=white)](#requirements)
-  [![Visual Studio Marketplace](https://img.shields.io/badge/Marketplace-pending-lightgrey?logo=visualstudio)](https://marketplace.visualstudio.com/items?itemName=alsi-lawr.gruber-darker-vs)
-
-  > **Note:** shields.io retired the `visual-studio-marketplace` version/install/rating badges
-  > in April 2026 (no public Marketplace API for third parties), so they're omitted here. The
-  > badge above just links to the listing — swap its href once the extension is published.
+  [![Visual Studio Marketplace](https://img.shields.io/badge/Marketplace-pending-lightgrey?logo=visualstudio)](https://marketplace.visualstudio.com/items?itemName=alsi-lawr-gh.gruber-darker-vs)
 </div>
 
 ## Screenshots
