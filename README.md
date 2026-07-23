@@ -1,15 +1,14 @@
 <div align="center">
-  <img src="src/Resources/icon.png" alt="Gruber Darker for Visual Studio" width="128" />
+  <img src="docs/images/gruber-darker-vs-logo.svg" alt="Gruber Darker for Visual Studio" width="128" height="128" />
 
   # Gruber Darker for Visual Studio
 
   A native Visual Studio dark theme with muted UI chrome and a warm, readable syntax palette —
   ported from the Gruber Darker lineage that runs through Emacs and BBEdit.
 
-  [![Build](https://github.com/alsi-lawr/gruber-darker-vs/actions/workflows/build.yml/badge.svg)](https://github.com/alsi-lawr/gruber-darker-vs/actions/workflows/build.yml)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+  [![Build](https://github.com/alsi-lawr/gruber-darker-vs/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/alsi-lawr/gruber-darker-vs/actions/workflows/build.yml)
+  [![Release](https://img.shields.io/github/v/release/alsi-lawr/gruber-darker-vs?display_name=tag&sort=semver)](https://github.com/alsi-lawr/gruber-darker-vs/releases/latest)
   [![Visual Studio 2022](https://img.shields.io/badge/Visual%20Studio-2022-5C2D91?logo=visualstudio&logoColor=white)](#requirements)
-  [![Visual Studio Marketplace](https://img.shields.io/badge/Marketplace-pending-lightgrey?logo=visualstudio)](https://marketplace.visualstudio.com/items?itemName=alsi-lawr-gh.gruber-darker-vs)
 </div>
 
 ## Screenshots
